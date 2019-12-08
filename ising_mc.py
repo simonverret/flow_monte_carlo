@@ -24,14 +24,15 @@ class SpinConfiguration():
         self.L = lenght
         self.N = lenght*lenght
         self.S_array = None
-        self.generate_neighbors_dict() # defines self.neighbors
-
+        
         # Periodic boundary lookup table 
         self.P1 = np.arange(1,lenght+1)
         self.P1[-1]=0       # ex: if L = 10,  P1 = [1,2,3,4,5,6,7,8,9,0] 
         self.M1 = np.arange(-1,lenght-1)
         self.M1[0]=lenght-1 # ex: if L = 10,  M1 = [9,0,1,2,3,4,5,6,7,8]
-    
+        
+        self.generate_neighbors_dict() # defines self.neighbors
+
     def generate_neighbors_dict(self):
         self.neighbors = {}
         for i in range(self.L):
