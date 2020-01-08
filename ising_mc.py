@@ -218,12 +218,12 @@ T_dense = np.linspace(args.Tmin,args.Tmax,1000)
 plt.plot(T_dense, exact_ising_magnetization(T_dense))
 plt.axvline(x=2.0/np.log(1.0+np.sqrt(2.0)), linewidth=1, color='gray', linestyle='--')
 plt.xlabel(r'Temperature ($T$)')
-plt.title('T_c = 2.2691...')
+plt.title(r'$T_c$ = 2.2691...')
 
 #%%
 
 for i in range(len(T_list)):
-    plt.hist(M_list[:,i],bins=30)
+    plt.hist(M_list[:,i],bins=100)
     plt.show()
 #%%
 # BINNING ANALYSIS TO CORRECT ERROR BARS
